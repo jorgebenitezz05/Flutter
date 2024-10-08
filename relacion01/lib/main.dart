@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           ),
           drawer: const MenuLateral(),
           body: const Center(
-            child: Text("Parte principal"),
+            child: Text("Parte principal Relación 1"),
           ),
         ));
   }

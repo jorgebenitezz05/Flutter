@@ -36,29 +36,47 @@ class MenuLateral extends StatelessWidget {
               },
             ),
           ),
-          ListTile(
-            title: const Text("Ejercicio 2"),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const Ejercicio2()));
-            },
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 2",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const Ejercicio2()));
+              },
+            ),
           ),
-                    ListTile(
-            title: const Text("Ejercicio 3"),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const Ejercicio3()));
-            },
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 3",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const Ejercicio3()));
+              },
+            ),
           ),
-                    ListTile(
-            title: const Text("Ejercicio 4"),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const Ejercicio4()));
-            },
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 4",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const Ejercicio4()));
+              },
+            ),
           ),
         ],
       ),

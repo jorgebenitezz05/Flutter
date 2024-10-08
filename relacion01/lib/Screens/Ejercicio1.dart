@@ -12,8 +12,8 @@ class Ejercicio1 extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Spacer(),
             Text(
               "Jorge Benítez Lladó",
               style: GoogleFonts.amethysta(
@@ -22,11 +22,12 @@ class Ejercicio1 extends StatelessWidget {
             ),
             const SizedBox(height: 20), 
             Text(
-              "Repositorio GitHub: ",
+              "Repositorio GitHub: https://github.com/jorgebenitezz05/Flutter.git",
               style: GoogleFonts.amethysta(
                 textStyle: const TextStyle(fontSize: 18.0),
               ),
             ),
+            const Spacer(),
           ],
         ),
       ),

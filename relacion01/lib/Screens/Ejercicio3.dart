@@ -9,10 +9,28 @@ class Ejercicio3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Segunda pantalla"),
+        title: const Text("Ejercicio 3"),
       ),
-      body: const Center(
-        child: Text("Parte central"),
+      body: Center(
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/images/coche.jpeg",
+               width: 200,
+               height: 200,
+            ),
+            Image.asset(
+              "assets/images/coche.jpeg",
+               width: 200,
+               height: 200,
+            ),
+            Image.asset(
+              "assets/images/coche.jpeg",
+               width: 200,
+               height: 200,
+            ),
+          ],
+        ),
       ),
     );
   }
