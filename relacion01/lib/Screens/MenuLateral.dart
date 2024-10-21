@@ -3,6 +3,7 @@ import 'Ejercicio1.dart';
 import 'Ejercicio2.dart';
 import 'Ejercicio3.dart';
 import 'Ejercicio4.dart';
+import 'main_Instagram.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({super.key});
@@ -75,6 +76,21 @@ class MenuLateral extends StatelessWidget {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) => const Ejercicio4()));
+              },
+            ),
+          ),
+
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 5 Instagram",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const Instagram()));
               },
             ),
           ),
