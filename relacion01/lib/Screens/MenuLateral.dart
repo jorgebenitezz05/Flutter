@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:relacion01/screens/Ejercicio5.dart';
+import 'package:relacion01/screens/Ejercicio6.dart';
+import 'package:relacion01/screens/Ejercicio7.dart';
 import 'Ejercicio1.dart';
 import 'Ejercicio2.dart';
 import 'Ejercicio3.dart';
@@ -84,7 +87,51 @@ class MenuLateral extends StatelessWidget {
             color: Colors.indigo,
             child: ListTile(
               title: const Text(
-                "Ejercicio 5 Instagram",
+                "Ejercicio 5",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const Ejercicio5()));
+              },
+            ),
+          ),
+
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 6",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const Ejercicio6()));
+              },
+            ),
+          ),
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 7",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const Ejercicio7()));
+              },
+            ),
+          ),
+
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 8 Instagram",
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
