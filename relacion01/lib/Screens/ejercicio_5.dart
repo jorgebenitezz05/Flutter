@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens.dart';
+
 class Ejercicio5 extends StatelessWidget {
   const Ejercicio5({super.key});
 
@@ -9,6 +11,7 @@ class Ejercicio5 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Ejercicio 5"),
       ),
+      drawer: const MenuLateral(),
       body: Column(
         children: [
           Container(

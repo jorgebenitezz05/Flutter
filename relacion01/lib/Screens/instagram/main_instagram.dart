@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'footer.dart';
-import 'parte_alta.dart';
-import 'parte_media_alta.dart';
-import 'parte_media_baja.dart';
+import '../screens.dart';
 
 void main() => runApp(const Instagram());
 
@@ -18,16 +15,11 @@ class Instagram extends StatelessWidget {
         appBar: AppBar(
           title: const Text("alvarezdelvayo"),
           backgroundColor: Colors.white,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
           actions: const [
             Icon(Icons.menu),
           ],
         ),
+        drawer: const MenuLateral(),
         body: const Column(
           children: [
             ParteAlta(),

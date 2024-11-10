@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'screens.dart';
+
 class Ejercicio1 extends StatelessWidget {
   const Ejercicio1({super.key});
 
@@ -10,6 +12,7 @@ class Ejercicio1 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Ejercicio 1"),
       ),
+      drawer: const MenuLateral(),
       body: Center(
         child: Column(
           children: [

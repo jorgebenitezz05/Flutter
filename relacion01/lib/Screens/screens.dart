@@ -1,0 +1,14 @@
+export '../drawer/menu_lateral.dart';
+export './ejercicio_1.dart';
+export './ejercicio_2.dart';
+export './ejercicio_3.dart';
+export './ejercicio_4.dart';
+export './ejercicio_5.dart';
+export './ejercicio_6.dart';
+export './ejercicio_7.dart';
+export './ejercicio_9.dart';
+export './instagram/main_instagram.dart';
+export './instagram/footer.dart';
+export './instagram/parte_alta.dart';
+export './instagram/parte_media_alta.dart';
+export './instagram/parte_media_baja.dart';

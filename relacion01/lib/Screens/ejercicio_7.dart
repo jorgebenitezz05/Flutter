@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens.dart';
+
 class Ejercicio7 extends StatelessWidget {
   const Ejercicio7({super.key});
 
@@ -10,6 +12,7 @@ class Ejercicio7 extends StatelessWidget {
         title: const Text("Jorge Benítez"),
       ),
       body: const MiContador(),
+      drawer: const MenuLateral(),
     );
   }
 }
