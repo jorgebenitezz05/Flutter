@@ -47,9 +47,10 @@ class _RandomColors extends State<Ejercicio9> {
     });
   }
 
+  // Metodo para posicion aleatoria
   void setRandomPosition() {
     double maxWidth = MediaQuery.of(context).size.width - 120;
-    double maxHeight = MediaQuery.of(context).size.height - 250;
+    double maxHeight = MediaQuery.of(context).size.height - 270;
 
     Random random = Random();
     xPos = random.nextDouble() * maxWidth;
@@ -102,6 +103,7 @@ class _RandomColors extends State<Ejercicio9> {
     );
   }
 
+  // Metodo para obtener una imagen random
   void getRandomImage() {
     Random random = Random();
     int randomNumber = random.nextInt(images.length);
@@ -109,6 +111,7 @@ class _RandomColors extends State<Ejercicio9> {
     randomImage = Image.asset(currentImagePath, width: 120, height: 120);
   }
 
+  // Metodo para sumar puntos cuando se pulse
   void onGiftTap() {
     if (!pulsado) {
       puntos++;
@@ -116,7 +119,7 @@ class _RandomColors extends State<Ejercicio9> {
       setState(() {});
     }
   }
-
+  // Metodo para reducir los puntos
   void reducePuntos() {
     puntos -= 2;
     setState(() {});

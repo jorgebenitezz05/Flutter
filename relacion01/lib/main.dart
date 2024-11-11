@@ -10,14 +10,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Relacion 1 y 2',
+        title: 'Relacion 1,2 y 3',
         home: Scaffold(
           appBar: AppBar(
-            title: const Text("Relación 1 y 2"),
+            title: const Text("Relación 1,2 y 3"),
           ),
           drawer: const MenuLateral(),
           body: const Center(
-            child: Text("Parte principal Relación 1 y 2"),
+            child: Text("Parte principal Relación 1,2 y 3"),
           ),
         ));
   }
