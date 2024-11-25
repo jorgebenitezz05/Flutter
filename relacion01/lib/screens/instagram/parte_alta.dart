@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ParteAlta extends StatelessWidget {
   const ParteAlta({super.key});
@@ -25,70 +24,64 @@ class ParteAlta extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 20),
-              Expanded(
+              const Expanded(
                 child: Column(
                   children: [
                     Text(
                       "1.026",
-                      style: GoogleFonts.amethysta(
-                        textStyle: const TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Amethysta',
                       ),
                     ),
                     Text(
                       "Publicacio...",
-                      style: GoogleFonts.amethysta(
-                        textStyle: const TextStyle(
-                          fontSize: 14.0,
-                        ),
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontFamily: 'Amethysta',
                       ),
                     ),
                   ],
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: Column(
                   children: [
                     Text(
                       "859",
-                      style: GoogleFonts.amethysta(
-                        textStyle: const TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Amethysta',
                       ),
                     ),
                     Text(
                       "Seguidores",
-                      style: GoogleFonts.amethysta(
-                        textStyle: const TextStyle(
-                          fontSize: 14.0,
-                        ),
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontFamily: 'Amethysta',
                       ),
                     ),
                   ],
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: Column(
                   children: [
                     Text(
                       "211",
-                      style: GoogleFonts.amethysta(
-                        textStyle: const TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Amethysta',
                       ),
                     ),
                     Text(
                       "Seguidos",
-                      style: GoogleFonts.amethysta(
-                        textStyle: const TextStyle(
-                          fontSize: 14.0,
-                        ),
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontFamily: 'Amethysta',
                       ),
                     ),
                   ],

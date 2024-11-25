@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'screens.dart';
 
@@ -13,24 +12,26 @@ class Ejercicio1 extends StatelessWidget {
         title: const Text("Ejercicio 1"),
       ),
       drawer: const MenuLateral(),
-      body: Center(
+      body: const Center(
         child: Column(
           children: [
-            const Spacer(),
+            Spacer(),
             Text(
               "Jorge Benítez Lladó",
-              style: GoogleFonts.amethysta(
-                textStyle: const TextStyle(fontSize: 20.0),
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Amethysta',
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             Text(
               "Repositorio GitHub: https://github.com/jorgebenitezz05/Flutter.git",
-              style: GoogleFonts.amethysta(
-                textStyle: const TextStyle(fontSize: 18.0),
+              style: TextStyle(
+                fontSize: 18.0,
+                fontFamily: 'Amethysta',
               ),
             ),
-            const Spacer(),
+            Spacer(),
           ],
         ),
       ),

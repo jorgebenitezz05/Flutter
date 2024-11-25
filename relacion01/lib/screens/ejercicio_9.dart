@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
-
 import 'screens.dart';
 
 class Ejercicio9 extends StatefulWidget {
@@ -28,6 +27,9 @@ class _RandomColors extends State<Ejercicio9> {
   double xPos = 0;
   double yPos = 0;
 
+  // Variable para almacenar el último mensaje mostrado
+  String lastMessage = '';
+
   @override
   void initState() {
     super.initState();
@@ -39,8 +41,9 @@ class _RandomColors extends State<Ejercicio9> {
     Timer.periodic(const Duration(milliseconds: 2000), (timer) {
       if (!pulsado) {
         reducePuntos();
+        checkSnackBar();
       }
-      pulsado = false; 
+      pulsado = false;
       getRandomImage();
       setRandomPosition();
       setState(() {});
@@ -63,42 +66,39 @@ class _RandomColors extends State<Ejercicio9> {
       setRandomPosition();
     }
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Jorge Benítez"),
-        ),
-        drawer: const Drawer(
-          child: MenuLateral(),
-        ),
-        backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            Positioned(
-              top: 50,
-              left: 0,
-              right: 0,
-              child: Center(
-                child: Text(
-                  'Puntos: $puntos',
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 30),
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Jorge Benítez"),
+      ),
+      drawer: const Drawer(
+        child: MenuLateral(),
+      ),
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 50,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Text(
+                'Puntos: $puntos',
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
               ),
             ),
-            Positioned(
-              top: yPos,
-              left: xPos,
-              child: GestureDetector(
-                onTap: () {
-                  onGiftTap();
-                },
-                child: randomImage,
-              ),
+          ),
+          Positioned(
+            top: yPos,
+            left: xPos,
+            child: GestureDetector(
+              onTap: () {
+                onGiftTap();
+              },
+              child: randomImage,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -117,11 +117,43 @@ class _RandomColors extends State<Ejercicio9> {
       puntos++;
       pulsado = true;
       setState(() {});
+      checkSnackBar();
     }
   }
+
   // Metodo para reducir los puntos
   void reducePuntos() {
     puntos -= 2;
     setState(() {});
+  }
+
+  // Metodo para mostrar el SnackBar dependiendo de los puntos
+  void checkSnackBar() {
+    String message = '';
+
+    // Determinar el mensaje adecuado
+    if (puntos == 10) {
+      message = '¡Sigue así!';
+    } else if (puntos == 20) {
+      message = '¡Eres un experto!';
+    } else if (puntos <= -10) {
+      message = '¡Retírate del juego!, dedicate a otra cosa';
+    }
+
+    // Mostrar el mensaje solo si es diferente al último mostrado
+    if (message.isNotEmpty && message != lastMessage) {
+      showSnackBar(message);
+      lastMessage = message;
+    }
+  }
+
+  // Metodo para mostrar el SnackBar
+  void showSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(seconds: 2),
+      ),
+    );
   }
 }

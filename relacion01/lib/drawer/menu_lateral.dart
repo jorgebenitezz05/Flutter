@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/screens.dart';
+import '../routes/app_routes.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({super.key});
@@ -13,10 +14,11 @@ class MenuLateral extends StatelessWidget {
             accountName: Text("Jorge Benítez Lladó"),
             accountEmail: Text("jbenlla0402@g.educaand.es"),
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://ichef.bbci.co.uk/news/660/cpsprodpb/6AFE/production/_102809372_machu.jpg"),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                image: AssetImage("assets/images/foto1.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Ink(
             color: Colors.indigo,
@@ -27,8 +29,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio1()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio1);
               },
             ),
           ),
@@ -41,8 +42,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio2()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio2);
               },
             ),
           ),
@@ -55,8 +55,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio3()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio3);
               },
             ),
           ),
@@ -69,8 +68,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio4()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio4);
               },
             ),
           ),
@@ -83,8 +81,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio5()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio5);
               },
             ),
           ),
@@ -97,8 +94,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio6()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio6);
               },
             ),
           ),
@@ -111,8 +107,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio7()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio7);
               },
             ),
           ),
@@ -125,8 +120,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Instagram()));
+                Navigator.of(context).pushNamed(AppRoutes.instagram);
               },
             ),
           ),
@@ -139,8 +133,7 @@ class MenuLateral extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const Ejercicio9()));
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio9);
               },
             ),
           ),

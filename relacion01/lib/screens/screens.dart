@@ -12,3 +12,6 @@ export './instagram/footer.dart';
 export './instagram/parte_alta.dart';
 export './instagram/parte_media_alta.dart';
 export './instagram/parte_media_baja.dart';
+export '../routes/app_routes.dart';
+export './splash_screen.dart';
+export './home_screen.dart';

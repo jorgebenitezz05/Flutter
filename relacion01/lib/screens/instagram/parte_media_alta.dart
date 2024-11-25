@@ -14,17 +14,17 @@ class ParteMediaAlta extends StatelessWidget {
           children: [
             const Text(
               "Fernando Álvarez del Vayo",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             ),
             const Text(
               '"Nunca sabes lo que te depara el futuro."',
-              style: TextStyle(color: Colors.grey, fontSize: 16),
+              style: TextStyle(color: Colors.grey, fontSize: 14),
             ),
             const Text(
               "faqsandroid.com/",
               style: TextStyle(color: Color.fromARGB(255, 12, 116, 201)),
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 10.0),
             Container(
               padding: const EdgeInsets.all(5.0),
               decoration: BoxDecoration(
@@ -36,85 +36,102 @@ class ParteMediaAlta extends StatelessWidget {
               child: const Center(
                 child: Text(
                   "Editar perfil",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
               ),
             ),
-            const SizedBox(height: 20.0),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Column(
-                  children: [
-                    Icon(
-                      Icons.add_circle_outline_rounded,
-                      size: 70.0,
-                      color: Colors.black,
-                    ),
-                    Text(
-                      "Nuevo",
-                      style: TextStyle(fontSize: 14.0),
-                    ),
-                    SizedBox(height: 10),
-                  ],
-                ),
-                SizedBox(width: 5),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const SizedBox(height: 10.0),
+            SizedBox(
+              height: 110,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  SizedBox(width: 10),
+                  Column(
                     children: [
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundImage:
-                                AssetImage("assets/images/foto2.jpg"),
-                          ),
-                          SizedBox(height: 5),
-                          Text("Pilotando"),
-                          SizedBox(height: 10),
-                        ],
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/foto2.jpg"),
                       ),
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundImage:
-                                AssetImage("assets/images/foto3.jpg"),
-                          ),
-                          SizedBox(height: 5),
-                          Text("Praga y Bu..."),
-                          SizedBox(height: 10),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundImage:
-                                AssetImage("assets/images/foto4.jpg"),
-                          ),
-                          SizedBox(height: 5),
-                          Text("Arquitectura"),
-                          SizedBox(height: 10),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundImage:
-                                AssetImage("assets/images/foto6.jpg"),
-                          ),
-                          SizedBox(height: 5),
-                          Text("Retratos"),
-                          SizedBox(height: 10),
-                        ],
-                      ),
+                      SizedBox(height: 5),
+                      Text("Pilotando", style: TextStyle(fontSize: 12)),
+                      SizedBox(height: 5),
                     ],
                   ),
-                ),
-              ],
+                  SizedBox(width: 10),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/foto3.jpg"),
+                      ),
+                      SizedBox(height: 5),
+                      Text("Praga y Bu...", style: TextStyle(fontSize: 12)),
+                      SizedBox(height: 5),
+                    ],
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/foto4.jpg"),
+                      ),
+                      SizedBox(height: 5),
+                      Text("Arquitectura", style: TextStyle(fontSize: 12)),
+                      SizedBox(height: 5),
+                    ],
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/foto6.jpg"),
+                      ),
+                      SizedBox(height: 5),
+                      Text("Retratos", style: TextStyle(fontSize: 12)),
+                      SizedBox(height: 5),
+                    ],
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/foto7.png"),
+                      ),
+                      SizedBox(height: 5),
+                      Text("Retratos", style: TextStyle(fontSize: 12)),
+                      SizedBox(height: 5),
+                    ],
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/foto8.jpg"),
+                      ),
+                      SizedBox(height: 5),
+                      Text("Atardecer", style: TextStyle(fontSize: 12)),
+                      SizedBox(height: 5),
+                    ],
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("assets/images/foto9.png"),
+                      ),
+                      SizedBox(height: 5),
+                      Text("Piedras", style: TextStyle(fontSize: 12)),
+                      SizedBox(height: 5),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

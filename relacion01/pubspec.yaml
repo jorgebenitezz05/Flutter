@@ -72,6 +72,15 @@ flutter:
     - assets/images/foto7.png
     - assets/images/foto8.jpg
     - assets/images/foto9.png
+    - assets/images/foto10.jpg
+    - assets/images/foto11.jpg
+    - assets/images/foto12.jpg
+    - assets/images/foto13.jpg
+  
+  fonts:
+    - family: Amethysta
+      fonts:
+        - asset: assets/fonts/Amethysta/Amethysta-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
