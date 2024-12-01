@@ -7,6 +7,7 @@ export './ejercicio_5.dart';
 export './ejercicio_6.dart';
 export './ejercicio_7.dart';
 export './ejercicio_9.dart';
+export './ejercicio_10.dart';
 export 'instagram/home_screen.dart';
 export './instagram/footer.dart';
 export './instagram/parte_alta.dart';
