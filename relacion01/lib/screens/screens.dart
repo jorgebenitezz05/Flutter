@@ -17,3 +17,6 @@ export '../routes/app_routes.dart';
 export './splash_screen.dart';
 export './home_screen.dart';
 export 'juego7ymedia/juego_7_y_media.dart';
+export 'formularios/home_screen.dart';
+export 'formularios/formulario_personalizado.dart';
+export 'formularios/formularios_adivina_numero.dart';

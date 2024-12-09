@@ -8,11 +8,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Relación 1,2,3 y 4"),
+        title: const Text("Relación 1,2,3,4 y 5"),
       ),
       drawer: const MenuLateral(),
       body: const Center(
-        child: Text("Parte principal Relación 1,2,3 y 4"),
+        child: Text("Parte principal Relación 1,2,3,4 y 5"),
       ),
     );
   }
