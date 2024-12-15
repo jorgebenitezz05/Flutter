@@ -20,3 +20,4 @@ export 'juego7ymedia/juego_7_y_media.dart';
 export 'formularios/home_screen.dart';
 export 'formularios/formulario_personalizado.dart';
 export 'formularios/formularios_adivina_numero.dart';
+export 'ejercicio_12_no_dual_2.dart';

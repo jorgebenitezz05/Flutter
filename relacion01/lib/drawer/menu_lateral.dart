@@ -141,7 +141,7 @@ class MenuLateral extends StatelessWidget {
             color: Colors.indigo,
             child: ListTile(
               title: const Text(
-                "Ejercicio 10",
+                "Ejercicio 10 NO DUAL",
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -160,6 +160,19 @@ class MenuLateral extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).pushNamed(AppRoutes.ejercicio11);
+              },
+            ),
+          ),
+          Ink(
+            color: Colors.indigo,
+            child: ListTile(
+              title: const Text(
+                "Ejercicio 12 NO DUAL 2",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed(AppRoutes.ejercicio12);
               },
             ),
           ),

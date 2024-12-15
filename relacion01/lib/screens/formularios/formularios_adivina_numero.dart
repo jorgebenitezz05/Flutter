@@ -13,18 +13,18 @@ class FormularioNumeroAdivinar extends StatefulWidget {
 class _FormularioNumeroAdivinarState extends State<FormularioNumeroAdivinar> {
   final _formKey = GlobalKey<FormState>();
   final List<TextEditingController> _textEditingControllers = [];
-  late final int _numeroAdivinar; 
-  String _mensaje = ''; 
+  late final int _numeroAdivinar;
+  String _mensaje = '';
 
   @override
   void initState() {
     super.initState();
     _textEditingControllers.add(TextEditingController());
     _textEditingControllers.add(TextEditingController());
-    _textEditingControllers.add(TextEditingController()); 
-    _textEditingControllers.add(TextEditingController()); 
+    _textEditingControllers.add(TextEditingController());
+    _textEditingControllers.add(TextEditingController());
 
-    _numeroAdivinar = Random().nextInt(100) + 1; 
+    _numeroAdivinar = Random().nextInt(100) + 1;
   }
 
   @override
@@ -42,7 +42,7 @@ class _FormularioNumeroAdivinarState extends State<FormularioNumeroAdivinar> {
               Padding(
                 padding: const EdgeInsets.all(7.0),
                 child: TextFormField(
-                  controller: _textEditingControllers[0], 
+                  controller: _textEditingControllers[0],
                   decoration: const InputDecoration(
                     icon: Icon(Icons.person),
                     hintText: 'Introduce tu nombre de usuario',
@@ -77,7 +77,7 @@ class _FormularioNumeroAdivinarState extends State<FormularioNumeroAdivinar> {
               Padding(
                 padding: const EdgeInsets.all(7.0),
                 child: TextFormField(
-                  controller: _textEditingControllers[2], 
+                  controller: _textEditingControllers[2],
                   obscureText: true,
                   decoration: const InputDecoration(
                     icon: Icon(Icons.lock),
@@ -98,7 +98,7 @@ class _FormularioNumeroAdivinarState extends State<FormularioNumeroAdivinar> {
               Padding(
                 padding: const EdgeInsets.all(7.0),
                 child: TextFormField(
-                  controller: _textEditingControllers[3], 
+                  controller: _textEditingControllers[3],
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     icon: Icon(Icons.add),
@@ -146,13 +146,15 @@ class _FormularioNumeroAdivinarState extends State<FormularioNumeroAdivinar> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate() &&
-                      _textEditingControllers[3].text == _numeroAdivinar.toString()) {
+                      _textEditingControllers[3].text ==
+                          _numeroAdivinar.toString()) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text("Formulario enviado")),
                     );
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("Por favor, corrige los errores")),
+                      const SnackBar(
+                          content: Text("Por favor, corrige los errores")),
                     );
                   }
                 },

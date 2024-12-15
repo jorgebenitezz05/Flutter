@@ -15,7 +15,7 @@ class AppRoutes {
   static const String ejercicio9 = '/ejercicio9';
   static const String ejercicio10 = '/ejercicio10';
   static const String ejercicio11 = '/ejercicio11';
-
+  static const String ejercicio12 = '/ejercicio12';
 
   static final Map<String, WidgetBuilder> routes = {
     splash: (context) => const SplashScreen(),
@@ -31,5 +31,6 @@ class AppRoutes {
     ejercicio9: (context) => const Ejercicio9(),
     ejercicio10: (context) => const Ejercicio10(),
     ejercicio11: (context) => const Ejercicio11(),
+    ejercicio12: (context) => const Ejercicio12(),
   };
 }
