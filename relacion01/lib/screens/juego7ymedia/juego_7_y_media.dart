@@ -17,31 +17,28 @@ class _Juego7yMediaState extends State<Juego7yMedia> {
   @override
   void initState() {
     super.initState();
-    _inicializarBaraja(); 
-    _mezclarBaraja(); 
+    _inicializarBaraja();
+    _mezclarBaraja();
   }
 
-// Inicializa la baraja
-void _inicializarBaraja() {
-  final palos = ['Oros', 'Copas', 'Espadas', 'Bastos'];
-  _baraja.addAll(palos.expand((palo) {
-    return List.generate(12, (i) {
-      final numero = i + 1;
-      return {
-        'nombre': '$numero de $palo',
-        'valor': numero > 7 ? 0.5 : numero.toDouble(),
-      };
-    });
-  }));
-}
+  void _inicializarBaraja() {
+    final palos = ['Oros', 'Copas', 'Espadas', 'Bastos'];
+    _baraja.addAll(palos.expand((palo) {
+      return List.generate(10, (i) {
+        if (i + 1 == 8 || i + 1 == 9) return null;
+        final numero = i + 1;
+        return {
+          'nombre': '$numero de $palo',
+          'valor': numero > 7 ? 0.5 : numero.toDouble(),
+        };
+      }).whereType<Map<String, dynamic>>();
+    }));
+  }
 
-  // Mezcla las cartas de la baraja
   void _mezclarBaraja() => _baraja.shuffle();
 
-  // Devuelve la última carta de la baraja
   Map<String, dynamic> _sacarCarta() => _baraja.removeLast();
 
-  // Lógica del turno de la mesa
   void _turnoMesa() {
     while (_puntuacionMesa < 5.5 && _baraja.isNotEmpty) {
       _puntuacionMesa += _sacarCarta()['valor'];
@@ -49,17 +46,19 @@ void _inicializarBaraja() {
     _verResultado();
   }
 
-  // Ver el resultado
   void _verResultado() {
     setState(() {
       if (_puntuacionJugador > 7.5) {
-        _mensaje = 'Te pasaste. Pierdes.\nTu puntuación fue: $_puntuacionJugador';
+        _mensaje =
+            'Te pasaste. Pierdes.\nTu puntuación fue: $_puntuacionJugador';
         _victoriasMesa++;
       } else if (_puntuacionMesa > 7.5) {
-        _mensaje = 'La computadora se pasó. ¡Ganas!\nPuntuación de la mesa: $_puntuacionMesa';
+        _mensaje =
+            'La computadora se pasó. ¡Ganas!\nPuntuación de la mesa: $_puntuacionMesa';
         _victoriasJugador++;
       } else if (_puntuacionJugador > _puntuacionMesa) {
-        _mensaje = '¡Ganas con $_puntuacionJugador puntos!\nPuntuación de la mesa: $_puntuacionMesa';
+        _mensaje =
+            '¡Ganas con $_puntuacionJugador puntos!\nPuntuación de la mesa: $_puntuacionMesa';
         _victoriasJugador++;
       } else if (_puntuacionJugador < _puntuacionMesa) {
         _mensaje = 'Pierdes. La mesa obtuvo $_puntuacionMesa puntos.';
@@ -75,7 +74,6 @@ void _inicializarBaraja() {
     });
   }
 
-  // Acción de pedir carta 
   void _pedirCarta() {
     if (_juegoTerminado || !_turnoJugador || _baraja.isEmpty) return;
     final carta = _sacarCarta();
@@ -86,7 +84,6 @@ void _inicializarBaraja() {
     });
   }
 
-  // Acción de plantarse 
   void _plantarse() {
     setState(() {
       _turnoJugador = false;
@@ -94,7 +91,6 @@ void _inicializarBaraja() {
     _turnoMesa();
   }
 
-  // Muestra un dialogo cuando alguno llega a 5 victorias
   void _mostrarDialogFinalizado() {
     showDialog(
       context: context,
@@ -125,7 +121,6 @@ void _inicializarBaraja() {
     );
   }
 
-  // Reinicia el juego 
   void _reiniciarJuego() {
     setState(() {
       _baraja.clear();
@@ -138,7 +133,6 @@ void _inicializarBaraja() {
     });
   }
 
-  // Reinicia el juego cuando alguien llega a 5 victorias
   void _reiniciarJuegoFinalizado() {
     setState(() {
       _victoriasJugador = _victoriasMesa = 0;
@@ -156,8 +150,12 @@ void _inicializarBaraja() {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Jugador: $_victoriasJugador', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Text('Mesa: $_victoriasMesa', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text('Jugador: $_victoriasJugador',
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
+                Text('Mesa: $_victoriasMesa',
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
@@ -167,18 +165,29 @@ void _inicializarBaraja() {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if (_mensaje.isNotEmpty)
-                    Text(_mensaje, textAlign: TextAlign.center, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    Text(_mensaje,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold)),
                   if (!_juegoTerminado) ...[
                     if (_cartaJugador.isNotEmpty)
-                      Text('Carta sacada: $_cartaJugador', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                      Text('Carta sacada: $_cartaJugador',
+                          style: const TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 10),
-                    Text('Tu puntuación: $_puntuacionJugador', style: const TextStyle(fontSize: 18)),
+                    Text('Tu puntuación: $_puntuacionJugador',
+                        style: const TextStyle(fontSize: 18)),
                     const SizedBox(height: 20),
-                    ElevatedButton(onPressed: _pedirCarta, child: const Text("Pedir Carta")), 
-                    ElevatedButton(onPressed: _plantarse, child: const Text("Plantarse")),
+                    ElevatedButton(
+                        onPressed: _pedirCarta,
+                        child: const Text("Pedir Carta")),
+                    ElevatedButton(
+                        onPressed: _plantarse, child: const Text("Plantarse")),
                   ],
                   if (_juegoTerminado)
-                    ElevatedButton(onPressed: _reiniciarJuego, child: const Text("Reiniciar Ronda")), 
+                    ElevatedButton(
+                        onPressed: _reiniciarJuego,
+                        child: const Text("Reiniciar Ronda")),
                 ],
               ),
             ),

@@ -14,7 +14,7 @@ class _Ejercicio12State extends State<Ejercicio12> {
   final List<TextEditingController> _textEditingControllers = [];
   bool _esFormularioIzquierda = true;
   bool _tieneHijos = false;
-  int _contadorHijos = 1;
+  List<int> _edadesHijos = [0, 0, 0];
   String _genero = "Prefiero no contestar";
   final List<bool> _aficiones = [false, false, false, false, false];
   DateTime _fechaNacimiento = DateTime.now();
@@ -72,6 +72,8 @@ class _Ejercicio12State extends State<Ejercicio12> {
                 if (_tieneHijos) ...[
                   const Text("Número de hijos:"),
                   _createChildrenDropdown(),
+                  const Text("Edad de los hijos:"),
+                  ..._createChildrenAgeFields(),
                 ],
               ] else ...[
                 _createDatePickerField(),
@@ -139,7 +141,6 @@ class _Ejercicio12State extends State<Ejercicio12> {
     );
   }
 
-  // Reemplaza el método _createDatePickerField() en _Ejercicio12State con este:
   TextFormField _createDatePickerField() {
     return TextFormField(
       controller: TextEditingController(
@@ -186,10 +187,11 @@ class _Ejercicio12State extends State<Ejercicio12> {
       }),
       onChanged: (value) {
         setState(() {
-          _contadorHijos = value ?? 1;
+          // Limitar a un máximo de 3 hijos
+          _edadesHijos = List<int>.filled(value!, 0);
         });
       },
-      value: _contadorHijos,
+      value: _edadesHijos.length,
       validator: (value) {
         if (value == null || value == 0) {
           return "Por favor, seleccione el número de hijos.";
@@ -197,6 +199,33 @@ class _Ejercicio12State extends State<Ejercicio12> {
         return null;
       },
     );
+  }
+
+  List<Widget> _createChildrenAgeFields() {
+    return List.generate(_edadesHijos.length, (index) {
+      return TextFormField(
+        decoration: InputDecoration(
+          labelText: "Edad del hijo ${index + 1}",
+          icon: const Icon(Icons.child_care),
+        ),
+        keyboardType: TextInputType.number,
+        onChanged: (value) {
+          setState(() {
+            _edadesHijos[index] = int.tryParse(value) ?? 0;
+          });
+        },
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "Por favor, introduzca la edad del hijo.";
+          }
+          int? edad = int.tryParse(value);
+          if (edad == null || edad <= 0 || edad > 18) {
+            return "La edad debe ser entre 1 y 18 años.";
+          }
+          return null;
+        },
+      );
+    });
   }
 
   DropdownButtonFormField<String> _createCityDropdown() {
@@ -243,6 +272,7 @@ class _Ejercicio12State extends State<Ejercicio12> {
                 (index == 1 ? Icons.book : 
                 (index == 2 ? Icons.airplanemode_active_outlined : 
                 (index == 3 ? Icons.music_note : Icons.movie)))),
+
               Text(aficion)
             ],
           ),
